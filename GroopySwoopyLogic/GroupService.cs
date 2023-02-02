@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GroopySwoopyLogic
 {
-    internal class GroupService
+    public class GroupService
     {
     }
 }
