@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GroopySwoopyDAL
 {
-    internal class EventDataservice
+    public class EventDataservice
     {
+
     }
 }

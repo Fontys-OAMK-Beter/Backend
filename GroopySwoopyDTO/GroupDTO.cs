@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GroopySwoopyDTO
 {
-    internal class GroupDTO
+    public class GroupDTO
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string PictureURL { get; set; }
     }
 }

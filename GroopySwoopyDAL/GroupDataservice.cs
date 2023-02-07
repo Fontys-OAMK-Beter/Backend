@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GroopySwoopyDAL
 {
-    internal class GroupDataservice
+    public class GroupDataservice
     {
     }
 }

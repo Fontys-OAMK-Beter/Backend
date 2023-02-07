@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace GroopySwoopyDTO
 {
-    internal class MovieDTO
+    public class MovieDTO
     {
+        public int Id { get; set; }
+
+        public int Votes { get; set; }
+
+
     }
 }
