@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GroopySwoopyInterfaces;
+using GroopySwoopyDTO;
 
 namespace GroopySwoopyLogic
 {
@@ -25,9 +25,9 @@ namespace GroopySwoopyLogic
             this.Users = users;
         }
 
-        public void GetAllUsers()
+        public List<UserDTO> GetAllUsers()
         {
-            _Dataservice.GetAllUsers();
+            return _Dataservice.GetAllUsers();
         }
     }
 }
