@@ -67,10 +67,17 @@ namespace GroopySwoopyDAL
                         var reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
-                            user.Id = reader.GetInt32(0);
-                            user.Name = reader.GetString(1);
-                            user.Password = reader.GetString(2);
-                            user.Email = reader.GetString(3);
+                            if(!reader.IsDBNull(0))
+                                user.Id = reader.GetInt32(0);
+
+                            if (!reader.IsDBNull(1))
+                                user.Name = reader.GetString(1);
+
+                            if (!reader.IsDBNull(2))
+                                user.Password = reader.GetString(2);
+
+                            if (!reader.IsDBNull(3))
+                                user.Email = reader.GetString(3);
                         }
                     }
 
