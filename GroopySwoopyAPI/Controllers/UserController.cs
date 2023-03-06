@@ -11,27 +11,20 @@ namespace GroopySwoopyAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        // GET: api/<UserController>
-        [HttpGet]
-        public IEnumerable<User> Get()
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public IEnumerable<User> Get(int id)
         {
             //var UserService = new UserService(new UserDataservice());
             //return UserService.GetAllUsers().ToArray();
 
             List<User> users = new List<User>();
             users.Add(new User());
-            users.LastOrDefault().Id = 7;
+            users.LastOrDefault().Id = id;
             users.LastOrDefault().Name = "VWVVHHOetroe";
             users.LastOrDefault().Email = "cbt@help.com";
 
             return users.ToArray();
-        }
-
-        // GET api/<UserController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
         }
 
         // POST api/<UserController>
