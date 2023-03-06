@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using GroopySwoopyLogic;
+using GroopySwoopyDAL;
+using GroopySwoopyDTO;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,6 +16,8 @@ namespace GroopySwoopyAPI.Controllers
         public IEnumerable<User> Get()
         {
             //var UserService = new UserService(new UserDataservice());
+            //return UserService.GetAllUsers().ToArray();
+
             List<User> users = new List<User>();
             users.Add(new User());
             users.LastOrDefault().Id = 7;
@@ -20,7 +25,6 @@ namespace GroopySwoopyAPI.Controllers
             users.LastOrDefault().Email = "cbt@help.com";
 
             return users.ToArray();
-            //return UserService.GetAllUsers().ToArray();
         }
 
         // GET api/<UserController>/5

@@ -29,7 +29,7 @@ namespace GroopySwoopyDAL
             //username = "lauren_hcadmin";
             //password = "r00tpass";
             //database = "lauren_healthcheck";
-            string cs = $"server={host};userid={username};password={password};database={database}";
+            string cs = $"Server={host};Uid={username};Pwd={password};Database={database}";
 
 
             //return "Server=studmysql01.fhict.local;Uid=dbi469729;Database=dbi469729;Pwd=test";
