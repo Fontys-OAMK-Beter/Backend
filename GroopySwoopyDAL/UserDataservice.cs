@@ -31,6 +31,8 @@ namespace GroopySwoopyDAL
                             UserDTO user = new UserDTO();
                             user.Id = reader.GetInt32(0);
                             user.Name = reader.GetString(1);
+                            user.Password = reader.GetString(2);
+                            user.Email = reader.GetString(3);
 
 
 
@@ -50,6 +52,40 @@ namespace GroopySwoopyDAL
                     con.Close();
                 }
             return users;
+        }
+
+        public UserDTO GetUserByID(int id)
+        {
+            UserDTO user = new UserDTO();
+            using (MySqlConnection con = DatabaseConnection.CreateConnection())
+
+                try
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM user WHERE id = "+id, con))
+                    {
+                        con.Open();
+                        var reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            user.Id = reader.GetInt32(0);
+                            user.Name = reader.GetString(1);
+                            user.Password = reader.GetString(2);
+                            user.Email = reader.GetString(3);
+                        }
+                    }
+
+
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.ToString());
+                    return null;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            return user;
         }
     }
 }

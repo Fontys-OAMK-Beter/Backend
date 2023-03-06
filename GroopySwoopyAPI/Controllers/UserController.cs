@@ -14,24 +14,31 @@ namespace GroopySwoopyAPI.Controllers
     {
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public IEnumerable<User> Get(int id)
+        public User Get(int id)
         {
-            //var UserService = new UserService(new UserDataservice());
-            //return UserService.GetAllUsers().ToArray();
+            //UserService userService = new UserService(new UserDataservice());
+            //List<UserDTO> dbUsers = userService.GetAllUsers();
 
 
+            //List<User> users = new List<User>();
+            //foreach (var item in dbUsers)
+            //{
+            //    users.Add(new User());
+            //    users.LastOrDefault().Name = item.Name;
+            //}
+
+            //return users.ToArray();
             UserService userService = new UserService(new UserDataservice());
-            List<UserDTO> dbUsers = userService.GetAllUsers();
+            UserDTO dbUser = userService.GetUserByID(id);
 
 
-            List<User> users = new List<User>();
-            foreach (var item in dbUsers)
-            {
-                users.Add(new User());
-                users.LastOrDefault().Name = item.Name;
-            }
+            User user = new User();
+            user.Name = dbUser.Name;
+            user.Id = dbUser.Id;
+            user.Email = dbUser.Email;
+            user.Password = dbUser.Password;
 
-            return users.ToArray();
+            return user;
 
 
         }

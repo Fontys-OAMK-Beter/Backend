@@ -10,5 +10,6 @@ namespace GroopySwoopyInterfaces
     public interface IUserDataservice
     {
         List<UserDTO> GetAllUsers();
+        UserDTO GetUserByID(int id);
     }
 }

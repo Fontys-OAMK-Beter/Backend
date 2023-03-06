@@ -29,5 +29,10 @@ namespace GroopySwoopyLogic
         {
             return _Dataservice.GetAllUsers();
         }
+
+        public UserDTO GetUserByID(int id)
+        {
+            return _Dataservice.GetUserByID(id);
+        }
     }
 }
