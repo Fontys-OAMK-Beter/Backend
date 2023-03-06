@@ -17,8 +17,7 @@ namespace GroopySwoopyDAL
 
             List<UserDTO> users = new List<UserDTO>();
 
-            //using (MySqlConnection con = new MySqlConnection(DatabaseConnection.CreateConnection().ConnectionString))
-            using (MySqlConnection con = new MySqlConnection(DatabaseConnection.))
+            using (MySqlConnection con = DatabaseConnection.CreateConnection())
 
             try
             {

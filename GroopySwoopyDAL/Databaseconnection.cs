@@ -12,7 +12,6 @@ namespace GroopySwoopyDAL
         public static MySqlConnection CreateConnection()
         {
             MySqlConnection connection = new MySqlConnection(GetConnectionString());
-            connection.Open();
 
             return connection;
         }
