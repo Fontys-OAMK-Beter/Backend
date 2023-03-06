@@ -16,11 +16,13 @@ namespace GroopySwoopyDAL
             
 
             List<UserDTO> users = new List<UserDTO>();
-            using (MySqlConnection con = new MySqlConnection(DatabaseConnection.CreateConnection().ConnectionString))
 
-                try
-                {
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT * From Region", con))
+            //using (MySqlConnection con = new MySqlConnection(DatabaseConnection.CreateConnection().ConnectionString))
+            using (MySqlConnection con = new MySqlConnection(DatabaseConnection.))
+
+            try
+            {
+                    using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM user", con))
                     {
                         con.Open();
                         var reader = cmd.ExecuteReader();

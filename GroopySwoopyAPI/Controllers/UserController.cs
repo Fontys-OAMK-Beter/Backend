@@ -2,6 +2,7 @@
 using GroopySwoopyLogic;
 using GroopySwoopyDAL;
 using GroopySwoopyDTO;
+using GroopySwoopyInterfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,13 +19,21 @@ namespace GroopySwoopyAPI.Controllers
             //var UserService = new UserService(new UserDataservice());
             //return UserService.GetAllUsers().ToArray();
 
+
+            UserService userService = new UserService(new UserDataservice());
+            List<UserDTO> dbUsers = userService.GetAllUsers();
+
+
             List<User> users = new List<User>();
-            users.Add(new User());
-            users.LastOrDefault().Id = id;
-            users.LastOrDefault().Name = "VWVVHHOetroe";
-            users.LastOrDefault().Email = "cbt@help.com";
+            foreach (var item in dbUsers)
+            {
+                users.Add(new User());
+                users.LastOrDefault().Name = item.Name;
+            }
 
             return users.ToArray();
+
+
         }
 
         // POST api/<UserController>
