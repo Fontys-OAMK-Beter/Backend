@@ -45,8 +45,14 @@ namespace GroopySwoopyAPI.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(string name, string email, string password)
         {
+            UserService userService = new UserService(new UserDataservice());
+            UserDTO user = new UserDTO();
+            user.Name = name;
+            user.Email = email;
+            user.Password = password;
+            userService.Post(user);
         }
 
         // PUT api/<UserController>/5

@@ -11,5 +11,6 @@ namespace GroopySwoopyInterfaces
     {
         List<UserDTO> GetAllUsers();
         UserDTO GetUserByID(int id);
+        void Post(UserDTO user);
     }
 }

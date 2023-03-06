@@ -94,6 +94,36 @@ namespace GroopySwoopyDAL
                 }
             return user;
         }
+
+        public void Post(UserDTO user)
+        {
+            using (MySqlConnection con = DatabaseConnection.CreateConnection())
+
+                try
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO user (id, name, password, email) VALUES (@id, @name, @password, @email)", con))
+                    {
+
+                        cmd.Parameters.AddWithValue("@id", user.Id);
+                        cmd.Parameters.AddWithValue("@name", user.Name);
+                        cmd.Parameters.AddWithValue("@password", user.Password);
+                        cmd.Parameters.AddWithValue("@email", user.Email);
+
+                        con.Open();
+                        var reader = cmd.ExecuteReader();
+                    }
+
+
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+        }
     }
 }
 

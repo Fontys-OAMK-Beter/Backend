@@ -34,5 +34,9 @@ namespace GroopySwoopyLogic
         {
             return _Dataservice.GetUserByID(id);
         }
+        public void Post(UserDTO user)
+        {
+            _Dataservice.Post(user);
+        }
     }
 }
