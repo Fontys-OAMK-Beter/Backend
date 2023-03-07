@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\GroopySwoopy</DockerfileContext>
+    <DockerfileContext>../GroopySwoopy</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,9 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GroopySwoopyDAL\GroopySwoopyDAL.csproj" />
-    <ProjectReference Include="..\GroopySwoopyInterfaces\GroopySwoopyInterfaces.csproj" />
-    <ProjectReference Include="..\GroopySwoopyLogic\GroopySwoopyLogic.csproj" />
+    <ProjectReference Include="../GroopySwoopyDAL/GroopySwoopyDAL.csproj" />
+    <ProjectReference Include="../GroopySwoopyInterfaces/GroopySwoopyInterfaces.csproj" />
+    <ProjectReference Include="../GroopySwoopyLogic/GroopySwoopyLogic.csproj" />
   </ItemGroup>
 
 </Project>
