@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apis2": {
+      "apiEndpoint": "https://groopyswoopyapiapi.azure-api.net/",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/GroopySwoopyAPIapi/apis/GroopySwoopyAPI",
+      "type": "apis.azure"
+    }
+  }
+}
