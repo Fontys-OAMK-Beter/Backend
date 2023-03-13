@@ -12,5 +12,6 @@ namespace GroopySwoopyInterfaces
         EventDTO GetSpecificGroupEvent(int EventId, int GroupId);
         List<EventDTO> GetAllEventsByGroupId(int id);
         void Post(EventDTO @event);
+        void Delete(int id);
     }
 }

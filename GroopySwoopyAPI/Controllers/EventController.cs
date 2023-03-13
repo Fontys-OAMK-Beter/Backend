@@ -3,6 +3,7 @@ using GroopySwoopyDTO;
 using GroopySwoopyLogic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NuGet.Protocol.Plugins;
 using System.Text.RegularExpressions;
 
@@ -76,6 +77,8 @@ namespace GroopySwoopyAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            EventService eventService = new EventService(new EventDataservice());
+            eventService.Delete(id);
         }
     }
 }
