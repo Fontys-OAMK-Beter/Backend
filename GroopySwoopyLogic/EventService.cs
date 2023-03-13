@@ -31,5 +31,9 @@ namespace GroopySwoopyLogic
         {
             _Dataservice.Post(@event);
         }
+        public void Delete(int EventId)
+        {
+            _Dataservice.Delete(EventId);
+        }
     }
 }

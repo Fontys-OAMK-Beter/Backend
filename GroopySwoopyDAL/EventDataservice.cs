@@ -11,6 +11,29 @@ namespace GroopySwoopyDAL
 {
     public class EventDataservice : IEventDataservice
     {
+        public void Delete(int id)
+        {
+            using (MySqlConnection con = DatabaseConnection.CreateConnection())
+
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("DELETE FROM event WHERE id=@Id", con);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+
+
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }
+        }
+
         public List<EventDTO> GetAllEventsByGroupId(int id)
         {
             List<EventDTO> events = new List<EventDTO>();
