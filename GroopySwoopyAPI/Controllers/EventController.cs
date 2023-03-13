@@ -1,5 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GroopySwoopyDAL;
+using GroopySwoopyDTO;
+using GroopySwoopyLogic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Plugins;
+using System.Text.RegularExpressions;
 
 namespace GroopySwoopyAPI.Controllers
 {
@@ -8,25 +13,57 @@ namespace GroopySwoopyAPI.Controllers
     public class EventController : ControllerBase
     {
         // GET api/<EventController>/5
-        [HttpGet("{id}")]
-        public IEnumerable<Event> Get(int id)
+        [HttpGet("{group_id}")]
+        public IEnumerable<Event> GetAllEventsByGroupId(int group_id)
         {
+            EventService eventService = new EventService(new EventDataservice());
+            List<EventDTO> dbEvents = eventService.GetAllEventsByGroupId(group_id);
+
 
             List<Event> events = new List<Event>();
-            events.Add(new Event());
-            events.LastOrDefault().Id = id;
-            events.LastOrDefault().Description = "Lekker evenementje joah";
-            events.LastOrDefault().Title = "Wouter's verjaardag";
-            events.LastOrDefault().PictureURL = "https://www.speeleiland.nl";
-            events.LastOrDefault().StartTime = DateTime.Now;
+            foreach (var item in dbEvents)
+            {
+                events.Add(new Event());
+                events.LastOrDefault().Title = item.Title;
+                events.LastOrDefault().Id = item.Id;
+                events.LastOrDefault().Description = item.Description;
+                events.LastOrDefault().PictureURL = item.PictureUrl;
+                events.LastOrDefault().StartTime = item.StartTime;
+            }
 
             return events.ToArray();
         }
 
+        // GET api/<EventController>/5
+        [HttpGet("{EventId},{GroupId}")]
+        public Event GetSpecificGroupEvent(int EventId, int GroupId)
+        {
+            EventService eventService = new EventService(new EventDataservice());
+            EventDTO dbUser = eventService.GetSpecificGroupEvent(EventId, GroupId);
+
+
+            Event @event = new Event();
+            @event.Title = dbUser.Title;
+            @event.Id = dbUser.Id;
+            @event.Description = dbUser.Description;
+            @event.PictureURL = dbUser.PictureUrl;
+            @event.StartTime = dbUser.StartTime;
+
+            return @event;
+        }
+
         // POST api/<EventController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(string Description, string Title,int GroupId, string PictureURl)
         {
+            EventService eventService = new EventService(new EventDataservice());
+            EventDTO @event = new EventDTO();
+            //@event.StartTime = StartTime;
+            @event.Description = Description;
+            @event.Title = Title;
+            @event.GroupId = GroupId;
+            @event.PictureUrl = PictureURl;
+            eventService.Post(@event);
         }
 
         // PUT api/<EventController>/5
