@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\GroopySwoopy</DockerfileContext>
+    <StartupObject>Microsoft.VisualStudio.Web.CodeGeneration.Design.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
