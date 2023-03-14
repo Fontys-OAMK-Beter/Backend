@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'GroopySwoopyAPI20230313135307'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_07D8DE92AD1D4E808056C17C59FA9368 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A25D82E601E240BE9D3C1BCE17A78451 }}
           package: .
