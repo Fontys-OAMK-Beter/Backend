@@ -1,7 +1,6 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<LangVersion>preview</LangVersion>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{22E04E85-600A-4103-A105-43FACE9977C8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
