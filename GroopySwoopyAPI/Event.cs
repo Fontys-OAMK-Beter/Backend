@@ -7,5 +7,6 @@ namespace GroopySwoopyAPI
         public string Description { get; set; }
         public string Title { get; set; }
         public string PictureURL { get; set; }
+        //no
     }
 }
