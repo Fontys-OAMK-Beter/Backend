@@ -5,15 +5,15 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopy", "GroopySwoopy.csproj", "{C2C0D52B-B700-4AE2-8366-C2D9D20C6E28}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyLogic", "../GroopySwoopyLogic/GroopySwoopyLogic.csproj", "{C5925095-9BBF-4E9F-A16C-8192BADF37DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyLogic", "..\GroopySwoopyLogic\GroopySwoopyLogic.csproj", "{C5925095-9BBF-4E9F-A16C-8192BADF37DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyDAL", "../GroopySwoopyDAL/GroopySwoopyDAL.csproj", "{B0C7BD49-DD49-40B0-B5BF-39504912341E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyDAL", "..\GroopySwoopyDAL\GroopySwoopyDAL.csproj", "{B0C7BD49-DD49-40B0-B5BF-39504912341E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyDTO", "../GroopySwoopyDTO/GroopySwoopyDTO.csproj", "{59E3E30D-6E49-4901-BA5C-B1F31916D172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyDTO", "..\GroopySwoopyDTO\GroopySwoopyDTO.csproj", "{59E3E30D-6E49-4901-BA5C-B1F31916D172}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyInterfaces", "../GroopySwoopyInterfaces/GroopySwoopyInterfaces.csproj", "{192A57BD-59AE-4FE4-A240-F57502956029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyInterfaces", "..\GroopySwoopyInterfaces\GroopySwoopyInterfaces.csproj", "{192A57BD-59AE-4FE4-A240-F57502956029}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroopySwoopyAPI", "../GroopySwoopyAPI/GroopySwoopyAPI.csproj", "{DA7EB10B-6FFB-41C9-8053-857200BA6B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroopySwoopyAPI", "..\GroopySwoopyAPI\GroopySwoopyAPI.csproj", "{DA7EB10B-6FFB-41C9-8053-857200BA6B8F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C5925095-9BBF-4E9F-A16C-8192BADF37DC} = {C5925095-9BBF-4E9F-A16C-8192BADF37DC}
 	EndProjectSection
