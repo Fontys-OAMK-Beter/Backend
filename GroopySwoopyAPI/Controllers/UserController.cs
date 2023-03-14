@@ -32,7 +32,7 @@ namespace GroopySwoopyAPI.Controllers
             UserDTO dbUser = userService.GetUserByID(id);
 
 
-            User user = new User();
+            User user = new User(); 
             user.Name = dbUser.Name;
             user.Id = dbUser.Id;
             user.Email = dbUser.Email;
