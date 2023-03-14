@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\GroopySwoopy</DockerfileContext>
+    <StartupObject>Microsoft.VisualStudio.Web.CodeGeneration.Design.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
